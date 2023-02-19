@@ -78,7 +78,7 @@
   }
   
   .chat-title-container {
-    width: calc(100% - 36px);
+    width: calc(100% - 40px);
     padding: 18px;
     text-align: center;
   }
@@ -294,4 +294,15 @@
     text-align: center;
     margin-top: 20px;
     margin-left: 20px;
+  }
+
+  .logout-parent{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profileDp{
+    width: 50px;
+    height: 50px;
+    border-radius: 4rem;
   }

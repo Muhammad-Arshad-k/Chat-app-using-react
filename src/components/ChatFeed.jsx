@@ -1,12 +1,13 @@
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
+import { LogoutOutlined } from '@ant-design/icons';
 
 const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
 
   const chat = chats && chats[activeChat];
-
+  console.log(chat)
   const renderReadReceipts = (message, isMyMessage) =>{
    return chat.people.map((person, index) => person.last_read === message.id && (
       <div
@@ -18,6 +19,10 @@ const ChatFeed = (props) => {
         }}
       />
     ));
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('user')
   }
  
 
@@ -49,7 +54,11 @@ const ChatFeed = (props) => {
   return (
     <div className="chat-feed">
       <div className="chat-title-container">
+        <div className='logout-parent'>
+        {chat && <div><img  className='profileDp' src={chat.last_message.sender.avatar} alt="" /></div> }
         <div className="chat-title">{chat?.title}</div>
+       <button onClick={handleLogout}><LogoutOutlined /></button> 
+        </div>
         <div className="chat-subtitle">
           {chat.people.map((person) => ` ${person.person.username}`)}
         </div>

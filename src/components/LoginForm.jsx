@@ -19,7 +19,7 @@ const LoginForm =()=>{
 
         window.location.reload()
     } catch (error) {
-        setError('Oop... Incorrect username or password')
+        setError('Oops... Incorrect username or password')
     }
    }
 
@@ -37,6 +37,7 @@ const LoginForm =()=>{
                 </div>
                 <small className="error">{error}</small>
             </form>
+
         </div>
     </div>
   )
